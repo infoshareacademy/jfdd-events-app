@@ -3,4 +3,9 @@
  */
 $(function() {
     $( "#accordion" ).accordion();
+
+$("button").click(function(){
+    $(".asideBoxSection div").toggle();
+});
+
 });

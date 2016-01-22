@@ -56,13 +56,14 @@
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 
 
-
+<row>
 <!----------   CALENDAR PLUGIN SECTION   ---------->
-<div id='calendar' class="calendarPlugin col-lg-10 col-lg-offset-1"></div>
+<div id='calendar' class="calendarPlugin col-lg-8 "></div>
 
 
 
 <!----------   ASIDE BOX MENU   ---------->
+<aside class="asideBoxSection col-lg-4">
 <div id="accordion" class="asideBoxMenu">
     <h3>WYDARZENIE 1</h3>
     <div>
@@ -101,6 +102,8 @@
         </p>
     </div>
 </div>
+</aside>
+</row>
 
 
 <!----------   IMPORTED DATA SECTION   ---------->
@@ -109,6 +112,8 @@
 <p id="#json-feed"></p>
 </section>
 
+
+<button>toogle asideMenu</button>
 
 </body>
 </html>

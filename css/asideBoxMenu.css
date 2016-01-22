@@ -1,6 +1,9 @@
+.asideBoxSection {
+
+}
+
 .asideBoxMenu {
     display: inline-block;
-    width: 400px;
     margin-bottom: 200px;
     background-color: #e9e9e9;
 }
