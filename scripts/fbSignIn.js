@@ -41,7 +41,7 @@ $(document).ready(function() {
             cookie     : true,  // enable cookies to allow the server to access
                                 // the session
             xfbml      : true,  // parse social plugins on this page
-            version    : 'v2.2' // use version 2.2
+            version    : 'v2.5' // use version 2.5
         });
 
         // Now that we've initialized the JavaScript SDK, we call
