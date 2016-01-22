@@ -4,7 +4,8 @@
 $(document).ready(function() {
 
     $('#calendar').fullCalendar({
-        lang: 'pl'
+        lang: 'pl',
+        height: 650
     })
 
 });

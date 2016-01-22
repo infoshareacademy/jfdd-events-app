@@ -1,0 +1,17 @@
+.asideBoxMenu {
+    display: inline-block;
+    width: 400px;
+    margin-bottom: 200px;
+    background-color: #e9e9e9;
+}
+
+.asideBoxMenu h3 {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    background-color: #666666;
+    color: white;
+}
+
+.asideBoxMenu p {
+    margin-bottom: 30px;
+}
