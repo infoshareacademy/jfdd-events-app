@@ -2,12 +2,14 @@
  * Created by klos on 19.01.2016.
  */
 
-(function () {
+$(document).ready(function () {
 
     var $container = $(document).find('.app');
     var $list = $('<ul>');
 
+
     $.get('data/events.xml', function (response) {
+
         $(response).find('entry').map(function (index) {
             var placeName = $(this).find('place name').text();
             var name = $(this).find('entry > name').text();
@@ -28,5 +30,5 @@
         });
 
         $container.append($list);
-    })
-}());
+    });
+});
