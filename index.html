@@ -5,6 +5,7 @@
     <meta name="discription" content="Gdańsk i wydarzenia">
     <meta name="author" content="Krzykum">
     <meta name="keywords" content="Gdańsk, wydarzenia, events, trójmiasto. 3miasto, event, gdansk, kalendarz, calendar">
+    <meta name="google-signin-client_id" content="522681644731-gt4sus4kgju29r6he4fiiaf5b9qudtkc.apps.googleusercontent.com">
     <link rel="icon" href="images/logo.png" type="image/png" sizes="16x16">
 
     <title>gdański kalendarz wydarzeń - sport | kultura | rozrywka</title>
@@ -27,6 +28,19 @@
 
 <body>
 
+<div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+</div>
+
+<section>
+<p id="json-fetching-status"></p>
+<p id="#json-feed"></p>
+</section>
+
+
 
 
 
@@ -35,8 +49,11 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <script src="http://cookiealert.sruu.pl/CookieAlert-latest.min.js"></script>
 <script src="scripts/cookies.js" ></script>
+<script src="scripts/apiConnector.js" ></script>
+<script src="scripts/fbSignIn.js" ></script>
 </body>
 </html>
