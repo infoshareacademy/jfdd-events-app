@@ -46,11 +46,9 @@
 <!----------   BODY SECTION   ---------->
 <body>
 
-<div
-        class="fb-like"
-        data-share="true"
-        data-width="450"
-        data-show-faces="true">
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+
+<div id="status">
 </div>
 
 <div id='calendar' class="calendarPlugin col-lg-10 col-lg-offset-1"></div>
