@@ -2,9 +2,9 @@
  * Created by klos/michal on 22.01.2016.
  */
 $(function() {
-    $("#accordion").accordion();
+    //$("#accordion").accordion();
 
-    $(".asideBoxSection").hide();
+    //$(".asideBoxSection").hide();
 
     $("button").click(function(){
         $(".asideBoxSection").fadeIn(1000);
