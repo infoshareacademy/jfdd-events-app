@@ -9270,7 +9270,7 @@ function Calendar_constructor(element, overrides) {
 
 	timezone: false,
 
-	//allDayDefault: undefined,
+	allDayDefault: false,
 
 	// locale
 	isRTL: false,
