@@ -5,4 +5,5 @@ html {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    filter: blur(25px);
 }
