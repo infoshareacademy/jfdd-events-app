@@ -2,10 +2,11 @@
  * Created by klos on 22.01.2016.
  */
 $(function() {
-    $( "#accordion" ).accordion();
+    $("#accordion").accordion();
 
 $("button").click(function(){
-    $(".asideBoxSection div").toggle();
+    $(".asideBoxSection").fadeIn(1000);
+    $("#calendar").addClass("col-sm-8");
 });
 
 });
