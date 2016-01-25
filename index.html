@@ -5,6 +5,7 @@
     <meta name="discription" content="Gdańsk i wydarzenia">
     <meta name="author" content="Krzykum">
     <meta name="keywords" content="Gdańsk, wydarzenia, events, trójmiasto. 3miasto, event, gdansk, kalendarz, calendar">
+    <meta name="google-signin-client_id" content="72627051191-b1l6mov4fabj10q5eqbv91gu42ilsgqq.apps.googleusercontent.com">
     <link rel="icon" href="images/logo.png" type="image/png" sizes="16x16">
 
     <title>gdański kalendarz wydarzeń - sport | kultura | rozrywka</title>
@@ -36,6 +37,9 @@
 <!----------   FB BUTTON SECTION   ---------->
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 
+
+<!----------   GOOGLE+ BUTTON SECTION   ---------->
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
 
 <row>
     <!----------   CALENDAR PLUGIN SECTION   ---------->
@@ -112,6 +116,7 @@
 <script src="scripts/apiConnectorJSON.js"></script>
 <script src="scripts/fbSignIn.js"></script>
 <script src="scripts/eventAsideBox.js"></script>
+<script src="scripts/googleSignIn.js"></script>
 <!------------calendar plugin------------>
 <link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
 <script src='lib/moment.min.js'></script>
