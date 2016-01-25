@@ -4,27 +4,33 @@
 $(document).ready(function() {
 
     $('#calendar').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
         lang: 'pl',
         height: 650,
-        dayClick: function() {
-            alert('a day has been clicked!');
-        },
-        events:
-
-            {
+        events: function(start, end, timezone, callback) {
+            $.ajax({
                 url: 'data/events.json',
-                data: {
-                    custom_param1: 'something',
-                    custom_param2: 'somethingelse'
-                },
-                error: function() {
-                    alert('there was an error while fetching events!');
-                },
-                color: 'yellow',   // a non-ajax option
-                textColor: 'black' // a non-ajax option
-            }
-
-    })
-
+                dataType: 'json',
+                success: function(eventsFeed) {
+                    var events = [];
+                    eventsFeed.forEach(function (event) {
+                        events.push({
+                            title: event.name,
+                            start: event.startDate,
+                            end: event.endDate,
+                            url: event.urls.www
+                        });
+                    });
+                    callback(events);
+                    console.log(arguments);
+                }
+            });
+        }
+    });
 
 });
+
