@@ -22,6 +22,7 @@ $(document).ready(function() {
                             title: event.name,
                             start: event.startDate,
                             end: event.endDate,
+                            url: event.urls.www
                         });
                     });
                     callback(events);
