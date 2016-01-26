@@ -5,6 +5,7 @@
     <meta name="discription" content="Gdańsk i wydarzenia">
     <meta name="author" content="Krzykum">
     <meta name="keywords" content="Gdańsk, wydarzenia, events, trójmiasto. 3miasto, event, gdansk, kalendarz, calendar">
+    <meta name="google-signin-client_id" content="72627051191-b1l6mov4fabj10q5eqbv91gu42ilsgqq.apps.googleusercontent.com">
     <link rel="icon" href="images/logo.png" type="image/png" sizes="16x16">
 
     <title>gdański kalendarz wydarzeń - sport | kultura | rozrywka</title>
@@ -36,8 +37,12 @@
 <!----------   FB BUTTON SECTION   ---------->
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 
-<div class="container-fluid">
-<div class="row">
+
+<!----------   GOOGLE+ BUTTON SECTION   ---------->
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+<a href="#" onclick="signOut();">Sign out</a>
+
+<row>
     <!----------   CALENDAR PLUGIN SECTION   ---------->
     <div id='calendar' class="calendarPlugin col-xs-12"></div>
 
@@ -108,7 +113,9 @@
 
 <!------------scripts------------>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="http://cookiealert.sruu.pl/CookieAlert-latest.min.js"></script>
 <script src="lib/jquery-ui.min.js"></script>
@@ -117,11 +124,12 @@
 <script src="scripts/apiConnectorJSON.js"></script>
 <script src="scripts/fbSignIn.js"></script>
 <script src="scripts/eventAsideBox.js"></script>
+<script src="scripts/googleSignIn.js"></script>
 <!------------calendar plugin------------>
 <link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
 <script src='lib/moment.min.js'></script>
-<script src="scripts/calendar.js"></script>
 <script src='fullcalendar/fullcalendar.js'></script>
+<script src="scripts/calendar.js"></script>
 <script src="fullcalendar/pl.js"></script>
 
 </body>

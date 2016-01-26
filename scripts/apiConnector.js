@@ -8,7 +8,7 @@ $(document).ready(function () {
     var $list = $('<ul>');
 
 
-    $.get('data/events.xml', function (response) {
+    $.get('data/events.json', function (response) {
 
         $(response).find('entry').map(function (index) {
             var placeName = $(this).find('place name').text();
