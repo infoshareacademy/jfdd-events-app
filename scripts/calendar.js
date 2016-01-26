@@ -22,7 +22,7 @@ $(document).ready(function() {
                             title: event.name,
                             start: event.startDate,
                             end: event.endDate,
-                            url: 'data/events.json'
+                            url: event.urls.wwwoprawa urla w calendar
                         });
                     });
                     callback(events);
