@@ -22,7 +22,7 @@ $(document).ready(function() {
                             title: event.name,
                             start: event.startDate,
                             end: event.endDate,
-
+                            url: 'data/events.json'
                         });
                     });
                     callback(events);
