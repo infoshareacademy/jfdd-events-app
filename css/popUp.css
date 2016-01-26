@@ -1,0 +1,9 @@
+.popUp {
+    display: none;
+    position: relative;
+    bottom: 160px;
+    z-index: 4000;
+    height: 500px;
+    background-color: #fff;
+    opacity: 0.6;
+}
