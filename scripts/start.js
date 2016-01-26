@@ -45,3 +45,12 @@ $(document).ready(function () {
     blurClose();
 
 });
+
+
+$('.logInButton, .logInMenu').click(function() {
+    $('.popUp').show("scale","swing", 1000);
+});
+
+$(".closingCross").click(function() {
+    $(".popUp").hide("scale","swing", 1000);
+});
