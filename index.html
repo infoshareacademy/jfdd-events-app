@@ -31,91 +31,112 @@
 
 <!----------   BODY SECTION   ---------->
 <body>
+    <header>
+        <div class="container">
+            <div>
+                <h3>Event Calendar </h3>
+            </div>
+            <div class="logout">
+                <p>LOGOUT</p>
+            </div>
+            <div class="social">
+                <img src="images/gg.svg" height="25px" width="25px"/>
+                <img src="images/tw.svg" height="25px" width="25px"/>
+                <img src="images/fb.svg" height="25px" width="25px"/>
+            </div>
+        </div>
+    </header>
 
 
 <!----------   FB BUTTON SECTION   ---------->
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
 
-
-<row>
+<div class="container-fluid">
+<div class="row">
     <!----------   CALENDAR PLUGIN SECTION   ---------->
-    <div id='calendar' class="calendarPlugin col-lg-8 "></div>
+    <div id='calendar' class="calendarPlugin col-xs-12"></div>
 
 
     <!----------   ASIDE BOX MENU   ---------->
-    <aside class="asideBoxSection col-lg-4">
-        <div id="accordion" class="asideBoxMenu">
-            <h3>WYDARZENIE 1</h3>
-            <div>
-                <p>
-                    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-                    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-                    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-                    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-                </p>
+    <div class="asideBoxSection col-sm-4">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a class="collapsible-group-item-1" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <!--Collapsible Group Item #1-->
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        <!--collapseOne text-->
+                    </div>
+                </div>
             </div>
-            <h3>WYDARZENIE 2</h3>
-            <div>
-                <p>
-                    Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
-                    purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
-                    velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
-                    suscipit faucibus urna.
-                </p>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Collapsible Group Item #2
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                        <!--collapseTwo text-->
+                    </div>
+                </div>
             </div>
-            <h3>WYDARZENIE 3</h3>
-            <div>
-                <p>
-                    Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
-                    Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
-                    ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
-                    lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
-                </p>
-            </div>
-            <h3>WYDARZENIE 4</h3>
-            <div>
-                <p>
-                    Cras dictum. Pellentesque habitant morbi tristique senectus et netus
-                    et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
-                    faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
-                    mauris vel est.
-                </p>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Collapsible Group Item #3
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                        <!--collapseThree text-->
+                    </div>
+                </div>
             </div>
         </div>
-    </aside>
-</row>
+    </div>
+</div>
+</div>
 
 
 <!----------   IMPORTED DATA SECTION   ---------->
 <section>
     <p id="json-fetching-status"></p>
-    <p id="#json-feed"></p>
+    <p id="json-feed"></p>
 </section>
 
 
 <button>toogle asideMenu</button>
 
-<div class="app"></div>
+<!--<div class="app"></div>-->
 
 
 
 <!------------scripts------------>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
-        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="http://cookiealert.sruu.pl/CookieAlert-latest.min.js"></script>
 <script src="lib/jquery-ui.min.js"></script>
 <script src="scripts/cookies.js"></script>
-<script src="scripts/apiConnector.js"></script>
+<!--<script src="scripts/apiConnector.js"></script>-->
+<script src="scripts/apiConnectorJSON.js"></script>
 <script src="scripts/fbSignIn.js"></script>
 <script src="scripts/eventAsideBox.js"></script>
 <!------------calendar plugin------------>
 <link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
 <script src='lib/moment.min.js'></script>
-<script src='fullcalendar/fullcalendar.js'></script>
 <script src="scripts/calendar.js"></script>
+<script src='fullcalendar/fullcalendar.js'></script>
 <script src="fullcalendar/pl.js"></script>
 
 </body>

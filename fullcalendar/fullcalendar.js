@@ -9270,7 +9270,7 @@ function Calendar_constructor(element, overrides) {
 
 	timezone: false,
 
-	//allDayDefault: undefined,
+	allDayDefault: false,
 
 	// locale
 	isRTL: false,
@@ -11295,7 +11295,7 @@ fcViews.month = {
 	'class': MonthView,
 	duration: { months: 1 }, // important for prev/next
 	defaults: {
-		fixedWeekCount: true
+		fixedWeekCount: false
 	}
 };
 	/* An abstract class for all agenda-related views. Displays one more columns with time slots running vertically.
