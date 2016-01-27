@@ -3,12 +3,10 @@
  */
 $(function() {
     //$("#accordion").accordion();
-
-    //$(".asideBoxSection").hide();
-
-    $("#calendar").click(function(){
-        $(".asideBoxSection").fadeIn(1000);
-        $("#calendar").addClass("col-sm-8");
+    $("button").click(function(){
+        $(".asideBoxSection").hide();
+        $("#calendar").removeClass("col-sm-8");
+        //$(".asideBoxSection").fadeIn(1000);
+        //$("#calendar").addClass("col-sm-8");
     });
-
 });

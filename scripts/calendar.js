@@ -10,10 +10,15 @@ $(document).ready(function() {
             right: 'month,agendaWeek,agendaDay'
         },
         eventRender: function(event, element) {
-            $(element).attr('title', event.ownProps.description);
-            $(element).mouseenter(function () {
-                $('#collapseOne .panel-body').text(event.ownProps.description);
-            });
+            $(element).attr('title', event.ownProps.url);
+            $(element).on('click',(function () {
+                $('#collapseOne .panel-body, #collapseTwo .panel-body, #collapseThree .panel-body').empty();
+                $(".asideBoxSection").fadeIn(1500);
+                $("#calendar").addClass("col-sm-8");
+                $(".collapsible-group-item-1").text(event.ownProps.eventName);
+                $('#collapseOne .panel-body').text(event.ownProps.description
+                    + '\n' + event.ownProps.url);
+            }));
         },
         lang: 'pl',
         height: 650,
@@ -28,11 +33,11 @@ $(document).ready(function() {
                             title: event.name,
                             start: event.startDate,
                             end: event.endDate,
-                            url: event.urls.www,
                             ownProps: {
-                                description: event.descLong
+                                description: event.descLong,
+                                eventName: event.name,
+                                url: event.urls.www,
                             }
-
                         });
                     });
                     callback(events);
