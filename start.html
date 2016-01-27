@@ -55,15 +55,36 @@
     <p>ZALOGUJ SIĘ</p>
 </button>
 
+
+
 <!------------POPUP------------>
+
 <section class="popUp col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
 <div class="closingCross"><p>x</p></div>
+
+<div class="logInHeader"><p>Zaloguj się do aplikacji poprzez:</p></div>
+
+    <!----------   FB BUTTON SECTION   ---------->
+        <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+
+    <div class="popUpFooter">
+        <p>Logowanie oznacza akceptację regulaminu <span class="linkToRegulations"><a class="regulationsSpan">Krzykum Events</a></span>.</p>
+    </div>
 </section>
 
 
 
+<div id="fb-root"></div>
+
 
 <!------------SCRIPTS------------->
+<script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=419851711401644";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
@@ -74,6 +95,7 @@
 <script src="scripts/cookies.js"></script>
 <script src="scripts/fbSignIn.js"></script>
 <script src="scripts/start.js"></script>
+<script src="scripts/googleSignIn.js"></script>
 
 </div>
 

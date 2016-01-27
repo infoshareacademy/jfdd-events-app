@@ -32,3 +32,9 @@
 .closingCross p:hover {
     cursor: pointer;
 }
+
+.logInHeader p {
+    font-size: 2em;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
