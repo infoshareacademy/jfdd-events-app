@@ -1,0 +1,34 @@
+.popUp {
+    display: none;
+    position: relative;
+    bottom: 160px;
+    z-index: 1000;
+    height: 500px;
+    background-color: #fff;
+    opacity: 0.98;
+}
+
+@media only screen and (max-width: 500px) {
+    .popUp {
+        position: relative;
+        top: -260px;
+        height: 550px;
+    }
+}
+
+.closingCross {
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    color: black;
+    font-size: 3em;
+}
+
+.closingCross p {
+    line-height: 0;
+}
+
+.closingCross p:hover {
+    cursor: pointer;
+}
