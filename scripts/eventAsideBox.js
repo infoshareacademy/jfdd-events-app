@@ -1,14 +1,12 @@
 /**
- * Created by klos/michal on 22.01.2016.
+ * Created by klos on 22.01.2016.
  */
 $(function() {
     //$("#accordion").accordion();
-
-    //$(".asideBoxSection").hide();
-
     $("button").click(function(){
-        $(".asideBoxSection").fadeIn(1000);
-        $("#calendar").addClass("col-sm-8");
+        $(".asideBoxSection").hide();
+        $("#calendar").removeClass("col-sm-8");
+        //$(".asideBoxSection").fadeIn(1000);
+        //$("#calendar").addClass("col-sm-8");
     });
-
 });
