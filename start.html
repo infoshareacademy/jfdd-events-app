@@ -7,7 +7,7 @@
     <meta name="keywords" content="Gdańsk, wydarzenia, events, trójmiasto. 3miasto, event, gdansk, kalendarz, calendar">
     <link rel="icon" href="images/logo.png" type="image/png" sizes="16x16">
 
-    <title>gdański kalendarz wydarzeń - sport | kultura | rozrywka</title>
+    <title>Logowanie | gdański kalendarz wydarzeń</title>
 
 
     <!------------fonts------------>
@@ -29,6 +29,7 @@
 </head>
 <body>
 
+
 <div class="container-fluid">
 <section class="backgroundImage"></section>
 </div>
@@ -49,15 +50,37 @@
     </div>
 </nav>
 
-<!------------TEXT AND BUTTON------------>
-<div class="introText col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">gdański kalendarz wydarzeń<br><span>w Twojej kieszeni</span></div>
-<button class="logInButton col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
-    <p>ZALOGUJ SIĘ</p>
-</button>
 
 <!------------POPUP------------>
-<section class="popUp col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-<div class="closingCross"><p>x</p></div>
+<section class="popUp col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <div class="closingCross"><p>x</p></div>
+
+
+    <div class="logInHeader">
+        <p>Zaloguj się do świata wydarzeń</p>
+    </div>
+
+
+    <!----------   FB BUTTON SECTION   ---------->
+    <div id="fb-root"></div>
+    <div class="fb-login-button" data-show-faces="false" data-auto-logout-link="false">
+    <fb:login-button size="xlarge"
+                     onlogin="Log.info.bind('onlogin callback')">
+        Zaloguj się przez FB
+    </fb:login-button>
+    </div>
+
+    <div class="popUpFooter">
+        <p>Logowanie oznacza akceptację <span class="linkToRegulations"><a class="regulationsSpan" href="images/regulamin.pdf" target="_blank">regulaminu</a></span>.</p>
+    </div>
+</section>
+
+<!------------TEXT AND BUTTON------------>
+<section class="mainContent">
+<div class="introText col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">gdański kalendarz wydarzeń<br><span>w Twojej kieszeni</span></div>
+<button class="logInButton col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+    <p>ZALOGUJ SIĘ</p>
+</button>
 </section>
 
 
@@ -74,6 +97,7 @@
 <script src="scripts/cookies.js"></script>
 <script src="scripts/fbSignIn.js"></script>
 <script src="scripts/start.js"></script>
+<script src="scripts/googleSignIn.js"></script>
 
 </div>
 

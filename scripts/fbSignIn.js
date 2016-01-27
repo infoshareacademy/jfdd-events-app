@@ -44,6 +44,10 @@ $(document).ready(function() {
             version    : 'v2.5' // use version 2.5
         });
 
+        FB.Event.subscribe('auth.login', function () {
+            window.location = "http://test.app.events.jfdd.infoshareaca.nazwa.pl/";
+        });
+
         // Now that we've initialized the JavaScript SDK, we call
         // FB.getLoginStatus().  This function gets the state of the
         // person visiting this page and can return one of three states to
@@ -79,5 +83,6 @@ $(document).ready(function() {
             console.log('Successful login for: ' + response.name);
         });
     }
+
 
 });
