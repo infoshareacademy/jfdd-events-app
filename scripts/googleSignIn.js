@@ -1,4 +1,4 @@
-$(document).ready(function() {
+
 
     function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
@@ -7,6 +7,24 @@ $(document).ready(function() {
         console.log('Image URL: ' + profile.getImageUrl());
         console.log('Email: ' + profile.getEmail());
     }
+    function onSuccess(googleUser) {
+        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+    }
+    function onFailure(error) {
+        console.log(error);
+    }
+    function renderButton() {
+        gapi.signin2.render('my-signin2', {
+            'scope': 'https://www.googleapis.com/auth/plus.login',
+            'width': 200,
+            'height': 50,
+            'longtitle': true,
+            'theme': 'dark',
+            'onsuccess': onSuccess,
+            'onfailure': onFailure
+        });
+    }
+
 
     function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
@@ -14,7 +32,7 @@ $(document).ready(function() {
             console.log('User signed out.');
         });
     }
-});
+
 
 //gapi.load('auth2', function() {
 //    auth2 = gapi.auth2.init({
