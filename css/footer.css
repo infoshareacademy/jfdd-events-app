@@ -1,0 +1,30 @@
+
+.footer {
+    margin-top: 90px;
+    border-top: 2px solid #e7e7e7;
+    padding-bottom: 30px;
+    color: #999999;
+    font-size: 12px;
+    text-align: left;
+    background-color: #F1F1F1;
+}
+
+.footer{
+    padding-top: 30px;
+    padding-bottom: 10px;
+    max-width: 1200px;
+}
+
+
+.footerMenu {
+    margin-bottom: 15px;
+}
+
+.footerForm {
+    margin-bottom: 15px;
+}
+
+.copyrights {
+    margin-top: 38px;
+    text-align: center;
+}
