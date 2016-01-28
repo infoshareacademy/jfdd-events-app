@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="lib/jquery-ui.min.css">
+    <link href="css/googleButton.css" type="text/css" rel="stylesheet">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,6 +71,20 @@
     </fb:login-button>
     </div>
 
+
+
+    <div id="gSignInWrapper">
+        <!--<span class="label">Sign in with:</span>-->
+        <div id="customBtn" class="customGPlusSignIn">
+            <span class="icon"></span>
+            <span class="buttonText">Google</span>
+        </div>
+    </div>
+    <div id="name"></div>
+
+
+
+
     <div class="popUpFooter">
         <p>Logowanie oznacza akceptację <span class="linkToRegulations"><a class="regulationsSpan" href="images/regulamin.pdf" target="_blank">regulaminu</a></span>.</p>
     </div>
@@ -97,7 +112,10 @@
 <script src="scripts/cookies.js"></script>
 <script src="scripts/fbSignIn.js"></script>
 <script src="scripts/start.js"></script>
+<script src="https://apis.google.com/js/api:client.js"></script>
 <script src="scripts/googleSignIn.js"></script>
+<script>startApp();</script>
+
 <script></script>
 
 </div>
