@@ -1,7 +1,9 @@
 /**
  * Created by klos on 22.01.2016.
  */
+var events;
 $(document).ready(function() {
+
 
     $('#calendar').fullCalendar({
         header: {
@@ -20,6 +22,12 @@ $(document).ready(function() {
                     + '\n' + event.ownProps.url);
             }));
         },
+        dayClick: function(date, jsEvent, view) {
+            var todayEvents = events.filter(function (event) {
+               return $.fullCalendar.moment(event.start).format('YYYY-MM-DD') === date.format();
+            });
+            console.log(todayEvents);
+        },
         lang: 'pl',
         height: 650,
         events: function(start, end, timezone, callback) {
@@ -27,7 +35,7 @@ $(document).ready(function() {
                 url: 'data/events.json',
                 dataType: 'json',
                 success: function(eventsFeed) {
-                    var events = [];
+                    events = [];
                     eventsFeed.forEach(function (event, index) {
                         events.push({
                             title: event.name,
