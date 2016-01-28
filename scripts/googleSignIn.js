@@ -1,30 +1,35 @@
-$(document).ready(function() {
+var googleUser = {};
+var startApp = function() {
+    gapi.load('auth2', function(){
+        auth2 = gapi.auth2.init({
+            client_id: '72627051191-b1l6mov4fabj10q5eqbv91gu42ilsgqq.apps.googleusercontent.com',
+            cookiepolicy: 'single_host_origin'
+           });
+        attachSignin(document.getElementById('customBtn'));
+    });
+};
 
-    function onSignIn(googleUser) {
-        var profile = googleUser.getBasicProfile();
-        console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-        console.log('Name: ' + profile.getName());
-        console.log('Image URL: ' + profile.getImageUrl());
-        console.log('Email: ' + profile.getEmail());
-    }
-
-    function signOut() {
-        var auth2 = gapi.auth2.getAuthInstance();
-        auth2.signOut().then(function () {
-            console.log('User signed out.');
+function attachSignin(element) {
+    console.log(element.id);
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+            document.getElementById('name').innerText = "Signed in: " +
+                googleUser.getBasicProfile().getName();
+        }, function(error) {
+            alert(JSON.stringify(error, undefined, 2));
         });
-    }
-});
+}
 
-//gapi.load('auth2', function() {
-//    auth2 = gapi.auth2.init({
-//        client_id: 'CLIENT_ID.apps.googleusercontent.com',
-//        fetch_basic_profile: false,
-//        scope: 'profile'
-//    });
-//
-//    // Sign the user in, and then retrieve their ID.
-//    auth2.signIn().then(function() {
-//        console.log(auth2.currentUser.get().getId());
-//    });
-//});
+
+
+
+
+
+    //function signOut() {
+    //    var auth2 = gapi.auth2.getAuthInstance();
+    //    auth2.signOut().then(function () {
+    //        console.log('User signed out.');
+    //    });
+    //}
+
+
