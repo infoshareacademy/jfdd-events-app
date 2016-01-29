@@ -41,3 +41,23 @@ h3 > span {
 .logout > p:hover {
     color: #0f4e98;
 }
+
+@media (max-width: 625px) {
+    h3 > span {
+        display: none;
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: #0f4e98;
+}
+.kontener {
+    width: 100%;
+}
+.kontener div h6 {
+    color: white;
+    font-weight: 100;
+    text-align: center;
+}
