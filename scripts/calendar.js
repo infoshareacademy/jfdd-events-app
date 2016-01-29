@@ -41,8 +41,8 @@ $(document).ready(function() {
 
         },
         lang: 'pl',
-        aspectRatio:2.5,
-        //height: 620,
+        //aspectRatio:2.5,
+        height: 620,
         events: function(start, end, timezone, callback) {
             $.ajax({
                 url: 'data/events.json',
