@@ -45,7 +45,7 @@ $(document).ready(function() {
         });
 
         FB.Event.subscribe('auth.login', function () {
-            window.location = "http://test.app.events.jfdd.infoshareaca.nazwa.pl/";
+            window.location = "http://test.app.events.jfdd.infoshareaca.nazwa.pl/start.html";
         });
 
         // Now that we've initialized the JavaScript SDK, we call

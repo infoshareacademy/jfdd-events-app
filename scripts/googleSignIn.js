@@ -13,7 +13,7 @@ function attachSignin(element) {
     console.log(element.id);
     auth2.attachClickHandler(element, {},
         function(googleUser) {
-            window.location = "http://test.app.events.jfdd.infoshareaca.nazwa.pl/";
+            window.location = "http://test.app.events.jfdd.infoshareaca.nazwa.pl/start.html";
             //document.getElementById('name').innerText = "Signed in: " +
             //    googleUser.getBasicProfile().getName();
         }, function(error) {
