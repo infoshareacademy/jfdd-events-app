@@ -48,7 +48,7 @@
 .popUpFooter {
     display: inline-block;
     width: 100%;
-    margin-top: 295px;
+    margin-top: 205px;
 }
 
 .popUpFooter p {
@@ -68,4 +68,43 @@
 
 .linkToRegulations a {
     cursor: pointer;
+}
+
+#gSignInWrapper {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+#customBtn {
+    display: inline-block;
+    background: #dd4B39;
+    color: white;
+    width: 285px;
+    white-space: nowrap;
+}
+#customBtn:hover {
+    cursor: pointer;
+}
+span.label {
+    font-weight: bold;
+}
+span.icon {
+    background: url('../images/gg_button.svg') transparent 5px 50% no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    width: 42px;
+    height: 42px;
+    border-right: #dd4B39 1px solid;
+}
+span.buttonText {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 42px;
+    padding-right: 42px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
