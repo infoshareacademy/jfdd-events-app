@@ -27,6 +27,14 @@ $(document).ready(function() {
                return $.fullCalendar.moment(event.start).format('YYYY-MM-DD') === date.format();
             });
             console.log(todayEvents);
+
+                todayEvents.forEach(function (event, index) {
+                    $(".asideBoxSection").fadeIn(1500);
+                    $("#calendar").addClass("col-sm-8");
+                    $(".collapsible-group-item-"+(index+1)).text(event.ownProps.eventName);
+                    $('.collapse-'+(index+1)).text(event.ownProps.description);
+                })
+
         },
         lang: 'pl',
         height: 650,
@@ -44,7 +52,7 @@ $(document).ready(function() {
                             ownProps: {
                                 description: event.descLong,
                                 eventName: event.name,
-                                url: event.urls.www,
+                                url: event.urls.www
                             }
                         });
                     });
