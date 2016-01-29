@@ -17,7 +17,7 @@ $(document).ready(function() {
                 $('#collapseOne .panel-body, #collapseTwo .panel-body, #collapseThree .panel-body').empty();
                 $(".asideBoxSection").fadeIn(1500);
                 $("#calendar").addClass("col-sm-8");
-                $(".collapsible-group-item-1").text(event.ownProps.eventName);
+                $(".collapsible-group-item").text(event.ownProps.eventName);
                 $('#collapseOne .panel-body').text(event.ownProps.description
                     + '\n' + event.ownProps.url);
             }));
