@@ -1,63 +1,80 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="discription" content="Gdańsk i wydarzenia">
     <meta name="author" content="Krzykum">
     <meta name="keywords" content="Gdańsk, wydarzenia, events, trójmiasto. 3miasto, event, gdansk, kalendarz, calendar">
-     <link rel="icon" href="images/logo.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="images/logo.png" type="image/png" sizes="16x16">
 
-    <title>gdański kalendarz wydarzeń - sport | kultura | rozrywka</title>
+    <title>Logowanie | gdański kalendarz wydarzeń</title>
 
 
     <!------------fonts------------>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,
                 400italic,700,700italic,900,900italic&subset=latin-ext,latin' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <!------------stylesheets------------>
     <link href="css/reset.css" type="text/css" rel="stylesheet">
-    <link href="css/menu.css" type="text/css" rel="stylesheet">
-    <link href="css/calendar.css" type="text/css" rel="stylesheet">
-    <link href="css/asideBoxMenu.css" type="text/css" rel="stylesheet">
     <link href="css/stylesheet.css" type="text/css" rel="stylesheet">
-    <link href="css/footer.css" type="text/css" rel="stylesheet">
-    <link href="css/googleButton.css" type="text/css" rel="stylesheet">
+    <link href="css/start.css" type="text/css" rel="stylesheet">
+    <link href="css/popUp.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="lib/jquery-ui.min.css">
+    <link href="css/googleButton.css" type="text/css" rel="stylesheet">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate"/>
 </head>
-
-
-<!----------   BODY SECTION   ---------->
 <body>
-    <header>
-        <div class="container">
-            <div>
-                <h3>Event Calendar </h3>
-            </div>
-            <div class="logout">
-                <p>LOGOUT</p>
-            </div>
-            <div class="social">
-                <img src="images/gg.svg" height="25px" width="25px"/>
-                <img src="images/tw.svg" height="25px" width="25px"/>
-                <img src="images/fb.svg" height="25px" width="25px"/>
-            </div>
-        </div>
-    </header>
 
 
-<!----------   FB BUTTON SECTION   ---------->
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+<div class="container-fluid">
+<section class="backgroundImage"></section>
+</div>
+
+<!------------MENU------------->
+<nav class="navbar menu">
+    <div class="container">
+    <ul>
+        <li>
+            <img class="navLogo" src="images/logo.png" />
+        </li>
+    </ul>
+    <ul>
+        <li class="logInMenu">
+            <a>Log in</a>
+        </li>
+    </ul>
+    </div>
+</nav>
 
 
-<!----------   GOOGLE+ BUTTON SECTION   ---------->
+<!------------POPUP------------>
+<section class="popUp col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    <div class="closingCross"><p>x</p></div>
+
+
+    <div class="logInHeader">
+        <p>Zaloguj się do świata wydarzeń</p>
+    </div>
+
+
+    <!----------   FB BUTTON SECTION   ---------->
+    <div id="fb-root"></div>
+    <div class="fb-login-button" data-show-faces="false" data-auto-logout-link="false">
+    <fb:login-button size="xlarge"
+                     onlogin="Log.info.bind('onlogin callback')">
+        Zaloguj się przez FB
+    </fb:login-button>
+    </div>
+
+
+
     <div id="gSignInWrapper">
-        <span class="label">Sign in with:</span>
         <div id="customBtn" class="customGPlusSignIn">
             <span class="icon"></span>
             <span class="buttonText">Google</span>
@@ -65,112 +82,43 @@
     </div>
     <div id="name"></div>
 
-<!--<a href="#" onclick="signOut();">Sign out</a>-->
-
-<row>
-    <!----------   CALENDAR PLUGIN SECTION   ---------->
-    <div id='calendar' class="calendarPlugin col-xs-12"></div>
 
 
-    <!----------   ASIDE BOX MENU   ---------->
-    <div class="asideBoxSection col-sm-4">
-        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingOne">
-                    <h4 class="panel-title">
-                        <a class="collapsible-group-item-1" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            <!--Collapsible Group Item #1-->
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                    <div class="panel-body collapse-1">
-                        <!--collapseOne text-->
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingTwo">
-                    <h4 class="panel-title">
-                        <a class="collapsed-group-item-2" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <!--Collapsible Group Item #2-->
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                    <div class="panel-body collapse-2">
-                        <!--collapseTwo text-->
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="headingThree">
-                    <h4 class="panel-title">
-                        <a class="collapsed-group-item-3" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            <!--Collapsible Group Item #3-->
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                    <div class="panel-body collapse-3">
-                        <!--collapseThree text-->
-                    </div>
-                </div>
-            </div>
-        </div>
+
+    <div class="popUpFooter">
+        <p>Logowanie oznacza akceptację <span class="linkToRegulations"><a class="regulationsSpan" href="images/regulamin.pdf" target="_blank">regulaminu</a></span>.</p>
     </div>
-</div>
-</div>
+</section>
 
-
-<!----------   IMPORTED DATA SECTION   ---------->
-<section>
-    <p id="json-fetching-status"></p>
-    <p id="json-feed"></p>
+<!------------TEXT AND BUTTON------------>
+<section class="mainContent">
+<div class="introText col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">gdański kalendarz wydarzeń<br><span>w Twojej kieszeni</span></div>
+<button class="logInButton col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
+    <p>ZALOGUJ SIĘ</p>
+</button>
 </section>
 
 
-<button>toogle asideMenu</button>
-
-<!--<div class="app"></div>-->
-
-<!----------   FOOTER SECTION   ---------->
-
-    <footer class="footer">
-        <div class="container">
-             <img src="images/logoFooter.png" alt="logo"/>
-            </div>
-        </div>
-        <div class="copyrights row">
-            <div class="col-sm-10 col-sm-offset-1">
-                <p>Copyright &copy; 2015 &frasl; 2016 KRZYKUM TEAM</p>
-            </div>
-        </div>
-    </footer>
 
 
-<!------------scripts------------>
-
-<script src="https://apis.google.com/js/api:client.js"></script>
+<!------------SCRIPTS------------->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
-    <script src="http://cookiealert.sruu.pl/CookieAlert-latest.min.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script src="http://cookiealert.sruu.pl/CookieAlert-latest.min.js"></script>
 <script src="lib/jquery-ui.min.js"></script>
 <script src="scripts/cookies.js"></script>
-<script src="scripts/apiConnector.js"></script>
-<!--<script src="scripts/apiConnectorJSON.js"></script>-->
 <script src="scripts/fbSignIn.js"></script>
-<script src="scripts/eventAsideBox.js"></script>
+<script src="scripts/start.js"></script>
+<script src="https://apis.google.com/js/api:client.js"></script>
 <script src="scripts/googleSignIn.js"></script>
-<!------------calendar plugin------------>
-<link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
-<script src='lib/moment.min.js'></script>
-<script src='fullcalendar/fullcalendar.js'></script>
-<script src="scripts/calendar.js"></script>
-<script src="fullcalendar/pl.js"></script>
 <script>startApp();</script>
+
+<script></script>
+
+</div>
 
 </body>
 </html>
