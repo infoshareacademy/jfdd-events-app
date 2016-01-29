@@ -19,3 +19,7 @@
 .asideBoxMenu p {
     margin-bottom: 30px;
 }
+
+button {
+    display: none;
+}

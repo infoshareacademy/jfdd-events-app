@@ -6,6 +6,7 @@ $(function() {
     $("button").click(function(){
         $(".asideBoxSection").hide();
         $("#calendar").removeClass("col-sm-8");
+        $('button').css('display','none');
         //$(".asideBoxSection").fadeIn(1000);
         //$("#calendar").addClass("col-sm-8");
     });
