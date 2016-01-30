@@ -6,6 +6,7 @@ $(document).ready(function() {
 
 
     $('#calendar').fullCalendar({
+
         header: {
             left: 'prev,next today',
             center: 'title',
@@ -40,9 +41,17 @@ $(document).ready(function() {
                 })
 
         },
+        eventLimit: true, // for all non-agenda views
+        views: {
+            agenda: {
+                eventLimit: 1 // adjust to 6 only for agendaWeek/agendaDay
+            }
+        },
         lang: 'pl',
-        //aspectRatio:2.5,
-        height: 620,
+        aspectRatio:2,
+        contentHeight: 450,
+        //height: 620,
+
         events: function(start, end, timezone, callback) {
             $.ajax({
                 url: 'data/events.json',
@@ -67,6 +76,7 @@ $(document).ready(function() {
             });
         }
     });
+
 
 });
 
