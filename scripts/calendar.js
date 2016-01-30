@@ -5,8 +5,8 @@ var events;
 $(document).ready(function() {
 
 
-    $('#calendar').fullCalendar({
 
+    $('#calendar').fullCalendar({
         header: {
             left: 'prev,next today',
             center: 'title',
@@ -14,8 +14,10 @@ $(document).ready(function() {
         },
 
         lang: 'pl',
-        //aspectRatio:2.5,
-        height: 620,
+        eventBackgroundColor:(255,0,0),
+        aspectRatio:2,
+        contentHeight: 450,
+        //height: 620,
 
         eventRender: function(event, element) {
             $(element).attr('title', event.ownProps.url);
