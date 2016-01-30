@@ -2,12 +2,9 @@
  * Created by klos on 22.01.2016.
  */
 $(function() {
-    //$("#accordion").accordion();
-    $("button").click(function(){
+    $(".asideButton button").click(function(){
         $(".asideBoxSection").hide();
         $("#calendar").removeClass("col-sm-8");
-        $('button').css('display','none');
-        //$(".asideBoxSection").fadeIn(1000);
-        //$("#calendar").addClass("col-sm-8");
+        $(".asideButton button").css('display','block');
     });
 });

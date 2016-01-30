@@ -23,3 +23,8 @@
 button {
     display: none;
 }
+
+.asideButton {
+    display: block;
+    float: right;
+}
