@@ -525,11 +525,8 @@ temporary rendered events).
 .ui-widget .fc-event {
 	color: #fff4fb; /* default TEXT color */
 	text-decoration: none; /* if <a> has an href */
-	/*margin: auto;*/
-	/*text-align: center;*/
-	/*text-justify: auto;*/
-	/*}*/
 }
+
 .fc-event[href],
 .fc-event.fc-draggable {
 	cursor: pointer; /* give events with links and draggable events a hand mouse pointer */
