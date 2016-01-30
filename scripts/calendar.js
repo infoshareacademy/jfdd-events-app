@@ -25,6 +25,8 @@ $(document).ready(function() {
         //    },
 
 
+
+
         eventRender: function(event, element) {
             $(element).attr('title', event.ownProps.url);
             $(element).on('click',(function () {
@@ -61,9 +63,11 @@ $(document).ready(function() {
 
 
         events: function(start, end, timezone, callback) {
+
             $.ajax({
                 url: 'data/events2.json',
                 dataType: 'json',
+
                 success: function(eventsFeed) {
                     events = [];
                     eventsFeed.forEach(function (event, index) {
@@ -83,6 +87,7 @@ $(document).ready(function() {
                     //console.log(arguments);
 
                 }
+
             });
         }
     });
