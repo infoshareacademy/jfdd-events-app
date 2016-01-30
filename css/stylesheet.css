@@ -1,9 +1,11 @@
 
 header {
     background-color: #1477d7;
-    box-shadow: 5px 0px 5px #072443;
+    box-shadow: 5px 0 5px #072443;
     margin-bottom: 20px;
 }
+
+
 .container div h3 {
     color: white;
     font-weight: 100;
@@ -52,6 +54,7 @@ h3 > span {
 .logout > p:hover {
     color: #0f4e98;
 }
+
 @media (max-width: 625px) {
     h3 > span {
         display: none;

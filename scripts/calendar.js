@@ -30,13 +30,13 @@ $(document).ready(function() {
             $(element).on('click',(function () {
                 $(".collapse-1", ".collapse-2", ".collapse-3").empty();
                 $(".asideBoxSection").fadeIn(1500);
-                $("#calendar").addClass("col-sm-8");
+                $("#calendar").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-8");
                 $(".collapsed-group-item-1").text(event.ownProps.eventName);
                 $('.collapse-1').html
                     ('<h4>' + "Miejsce wydarzenia" + '</h4>' + event.ownProps.position + '<br>' + '<br>'
                     + '<h4>' + "Opis wydarzenia" + '</h4>' + event.ownProps.description + '\n' + '<br>' + '<br>' +
                     '<h4>' + "Witryna internetowa" + '</h4>' + '<a class="linkToWebsite" href="">' + event.ownProps.url + '</a>' + '<br>' + '<br>');
-                $('.linkToWebsite').attr("href", "");
+                $(".linkToWebsite").attr("href", "http://wp.pl");
                 $('button').css("display","inline-block");
             }));
         },
