@@ -16,8 +16,14 @@ $(document).ready(function() {
         lang: 'pl',
         eventBackgroundColor:(255,0,0),
         aspectRatio:2,
-        contentHeight: 450,
+        contentHeight: 650,
         //height: 620,
+        eventLimit: true, // for all non-agenda views
+        //views: {
+        //    agenda: {
+                eventLimit: 5,// adjust to 6 only for agendaWeek/agendaDay
+        //    },
+
 
         eventRender: function(event, element) {
             $(element).attr('title', event.ownProps.url);

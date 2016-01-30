@@ -509,22 +509,27 @@ temporary rendered events).
 .fc-event {
 	position: relative; /* for resize handle and other inner positioning */
 	display: block; /* make the <a> tag block */
-	font-size: .85em;
+	font-size: 0.8em;
 	line-height: 1.3;
-	/*border-radius: 3px;*/
-	/*border: 1px solid #3a87ad; !* default BORDER color *!*/
-	background-color: #e59050; /* default BACKGROUND color */
+	border-radius: 5px;
+	border: 2px solid #fffbf7; /* default BORDER color */
+	background-color: #0f4e98; /* default BACKGROUND color */
 	font-weight: 200; /* undo jqui's ui-widget-header bold */
+	padding: 5px 5px 5px 5px;
+	margin-top: 10px;
 }
 
 /* overpower some of bootstrap's and jqui's styles on <a> tags */
 .fc-event,
 .fc-event:hover,
 .ui-widget .fc-event {
-	color: #fff; /* default TEXT color */
+	color: #fff4fb; /* default TEXT color */
 	text-decoration: none; /* if <a> has an href */
+	/*margin: auto;*/
+	/*text-align: center;*/
+	/*text-justify: auto;*/
+	/*}*/
 }
-
 .fc-event[href],
 .fc-event.fc-draggable {
 	cursor: pointer; /* give events with links and draggable events a hand mouse pointer */
@@ -616,18 +621,18 @@ be a descendant of the grid when it is being dragged.
 */
 
 .fc-day-grid-event {
-	margin: 1px 2px 0; /* spacing between events and edges */
+	margin: 0px 10px 0px 10px; /* spacing between events and edges */
 	padding: 0 1px;
 }
 
 
-.fc-day-grid-event .fc-content { /* force events to be one-line tall */
-	white-space: nowrap;
-	overflow: hidden;
-}
+/*.fc-day-grid-event .fc-content { !* force events to be one-line tall *!*/
+	/*white-space: nowrap;*/
+	/*overflow: hidden;*/
+/*}*/
 
 .fc-day-grid-event .fc-time {
-	font-weight: bold;
+	font-weight: 100;
 	display: none;
 }
 
