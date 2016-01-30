@@ -20,7 +20,7 @@ $(document).ready(function () {
             var startHour = startDate.slice(11,16);
             return $('<li>')
                 .append(index + ' ')
-                .append('Start imprezy: ' + startDay + ' ' + 'godzina: ' + startHour)
+                .append('<strong>' + 'Start imprezy: ' + '</strong>' + startDay + ' ' + 'godzina: ' + startHour)
                 .append('<p>' + 'Miejsce imprezy: ' + placeName)
                 .append('<p>' + 'Nazwa imprezy: '+ name)
                 .append('<p>' + 'Opis imprezy: ' + descLong);

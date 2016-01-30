@@ -6,11 +6,17 @@ $(document).ready(function() {
 
 
     $('#calendar').fullCalendar({
+
         header: {
             left: 'prev,next today',
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
         },
+
+        lang: 'pl',
+        //aspectRatio:2.5,
+        height: 620,
+
         eventRender: function(event, element) {
             $(element).attr('title', event.ownProps.url);
             $(element).on('click',(function () {
@@ -18,34 +24,37 @@ $(document).ready(function() {
                 $(".asideBoxSection").fadeIn(1500);
                 $("#calendar").addClass("col-sm-8");
                 $(".collapsed-group-item-1").text(event.ownProps.eventName);
-                $('.collapse-1').text(event.ownProps.description
-                    + '\n' + event.ownProps.url);
-                $('button').css("display","block");
+                $('.collapse-1').html
+                    ('<h4>' + "Miejsce wydarzenia" + '</h4>' + event.ownProps.position + '<br>' + '<br>'
+                    + '<h4>' + "Opis wydarzenia" + '</h4>' + event.ownProps.description + '\n' + '<br>' + '<br>' +
+                    '<h4>' + "Witryna internetowa" + '</h4>' + '<a class="linkToWebsite" href="">' + event.ownProps.url + '</a>' + '<br>' + '<br>');
+                $('.linkToWebsite').attr("href", "");
+                $('button').css("display","inline-block");
             }));
         },
-        dayClick: function(date, jsEvent, view) {
-            $(".collapse-1, .collapse-2, .collapse-3, " +
-                ".collapsed-group-item-1, .collapsed-group-item-2, .collapsed-group-item-3").empty();
-            var todayEvents = events.filter(function (event) {
-               return $.fullCalendar.moment(event.start).format('YYYY-MM-DD') === date.format();
-            });
-            console.log(todayEvents);
 
-                todayEvents.forEach(function (event, index) {
-                    $(".asideBoxSection").fadeIn(1500);
-                    $("#calendar").addClass("col-sm-8");
-                    $(".collapsed-group-item-"+(index+1)).text(event.ownProps.eventName);
-                    $('.collapse-'+(index+1)).text(event.ownProps.description);
-                    $('button').css("display","block");
-                })
+        //dayClick: function(date, jsEvent, view) {
+        //    $(".collapse-1, .collapse-2, .collapse-3, " +
+        //        ".collapsed-group-item-1, .collapsed-group-item-2, .collapsed-group-item-3").empty();
+        //    var todayEvents = events.filter(function (event) {
+        //       return $.fullCalendar.moment(event.start).format('YYYY-MM-DD') === date.format();
+        //    });
+        //    console.log(todayEvents);
+        //
+        //        todayEvents.forEach(function (event, index) {
+        //            $(".asideBoxSection").fadeIn(1500);
+        //            $("#calendar").addClass("col-sm-8");
+        //            $(".collapsed-group-item-"+(index+1)).text(event.ownProps.eventName);
+        //            $('.collapse-'+(index+1)).text(event.ownProps.description);
+        //            $('button').css("display","inline-block");
+        //        })
+        //
+        //},
 
-        },
-        lang: 'pl',
-        //aspectRatio:2.5,
-        height: 620,
+
         events: function(start, end, timezone, callback) {
             $.ajax({
-                url: 'data/events.json',
+                url: 'data/events2.json',
                 dataType: 'json',
                 success: function(eventsFeed) {
                     events = [];
@@ -57,12 +66,14 @@ $(document).ready(function() {
                             ownProps: {
                                 description: event.descLong,
                                 eventName: event.name,
-                                url: event.urls.www
+                                url: event.urls.www,
+                                position: event.place.name
                             }
                         });
                     });
                     callback(events);
-                    console.log(arguments);
+                    //console.log(arguments);
+
                 }
             });
         }
