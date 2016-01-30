@@ -30,7 +30,7 @@ $(document).ready(function() {
             $(element).on('click',(function () {
                 $(".collapse-1", ".collapse-2", ".collapse-3").empty();
                 $(".asideBoxSection").fadeIn(1500);
-                $("#calendar").addClass("col-sm-8");
+                $("#calendar").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-8");
                 $(".collapsed-group-item-1").text(event.ownProps.eventName);
                 $('.collapse-1').html
                     ('<h4>' + "Miejsce wydarzenia" + '</h4>' + event.ownProps.position + '<br>' + '<br>'

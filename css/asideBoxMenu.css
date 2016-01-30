@@ -1,5 +1,6 @@
 .asideBoxSection {
     display: none;
+    margin-top: 51px;
 }
 
 .asideBoxMenu {
@@ -27,4 +28,10 @@ button {
 .asideButton {
     display: block;
     float: right;
+}
+
+
+.asideBoxPanel {
+    height: 640px;
+    overflow-y: scroll;
 }
