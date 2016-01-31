@@ -12,7 +12,6 @@ $(document).ready(function() {
             center: 'title',
             right: 'month,agendaWeek,agendaDay'
         },
-
         lang: 'pl',
         eventBackgroundColor:(255,0,0),
         aspectRatio:2,
@@ -23,7 +22,7 @@ $(document).ready(function() {
         //agenda: {
         eventLimit: 5,// adjust to 6 only for agendaWeek/agendaDay
         //},
-
+        eventLimitText:'events',
 
         eventRender: function(event, element) {
             $(element).attr('title', event.ownProps.url);
