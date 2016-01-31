@@ -14,7 +14,7 @@ $(document).ready(function() {
         },
         lang: 'pl',
         eventBackgroundColor:(255,0,0),
-        aspectRatio:2,
+        //aspectRatio:2.8,
         contentHeight: 650,
         //height: 620,
         eventLimit: true, // for all non-agenda views
