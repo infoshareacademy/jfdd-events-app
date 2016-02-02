@@ -5,6 +5,6 @@ $(function() {
     $(".asideButton button").click(function(){
         $(".asideBoxSection").hide();
         $("#calendar").removeClass("col-xs-12 col-sm-12 col-md-12 col-lg-8");
-        $(".asideButton button").css('display','none');
+        $(".asideButton button").css('display','block');
     });
 });
