@@ -16,13 +16,14 @@ $(document).ready(function() {
         lang: 'pl',
         eventBackgroundColor:(255,0,0),
         aspectRatio:2,
-        contentHeight: 650,
+        contentHeight: 680,
         //height: 620,
         eventLimit: true, // for all non-agenda views
         //views: {
         //    agenda: {
                 eventLimit: 5,// adjust to 6 only for agendaWeek/agendaDay
         //    },
+        eventLimitText: " ",
 
 
 
@@ -37,8 +38,8 @@ $(document).ready(function() {
                 $('.collapse-1').html
                     ('<h4>' + "Miejsce wydarzenia" + '</h4>' + event.ownProps.position + '<br>' + '<br>'
                     + '<h4>' + "Opis wydarzenia" + '</h4>' + event.ownProps.description + '\n' + '<br>' + '<br>' +
-                    '<h4>' + "Witryna internetowa" + '</h4>' + '<a class="linkToWebsite" href="">' + event.ownProps.url + '</a>' + '<br>' + '<br>');
-                $(".linkToWebsite").attr("href", "http://wp.pl");
+                    '<h4>' + "Witryna internetowa" + '</h4>' + '<a class="linkToWebsite" href="" target="_blank">' + event.ownProps.url + '</a>' + '<br>' + '<br>');
+                $(".linkToWebsite").attr("href", event.ownProps.url);
                 $('button').css("display","inline-block");
             }));
         },
