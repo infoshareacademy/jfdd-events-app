@@ -72,6 +72,14 @@ $(document).ready(function() {
                 success: function(eventsFeed) {
                     events = [];
                     eventsFeed.forEach(function (event, index) {
+
+                        function getAttachments (element){
+                            var arr = element.attachments.map(function (item) {
+                                return item.fileName;
+                            });
+                            return arr;
+                        }
+
                         events.push({
                             title: event.name,
                             start: event.startDate,
@@ -80,7 +88,8 @@ $(document).ready(function() {
                                 description: event.descLong,
                                 eventName: event.name,
                                 url: event.urls.www,
-                                position: event.place.name
+                                position: event.place.name,
+                                images: getAttachments(event)
                             }
                         });
                     });
