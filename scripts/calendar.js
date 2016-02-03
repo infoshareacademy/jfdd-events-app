@@ -15,14 +15,15 @@ $(document).ready(function() {
 
         lang: 'pl',
         eventBackgroundColor:(255,0,0),
-        aspectRatio:2,
+        //aspectRatio:2,
         contentHeight: 680,
         //height: 620,
         eventLimit: true, // for all non-agenda views
         //views: {
-        //    agenda: {
-                eventLimit: 5,// adjust to 6 only for agendaWeek/agendaDay
-        //    },
+        eventLimit: 3,
+        agenda: {
+                eventLimit: 6,// adjust to 6 only for agendaWeek/agendaDay
+            },
         eventLimitText: " ",
 
 
@@ -40,7 +41,7 @@ $(document).ready(function() {
                     + '<h4>' + "Opis wydarzenia" + '</h4>' + event.ownProps.description + '\n' + '<br>' + '<br>' +
                     '<h4>' + "Witryna internetowa" + '</h4>' + '<a class="linkToWebsite" href="" target="_blank">' + event.ownProps.url + '</a>' + '<br>' + '<br>');
                 $(".linkToWebsite").attr("href", event.ownProps.url);
-                $('button').css("display","inline-block");
+                $('.baton').css("display","inline-block");
             }));
         },
 
@@ -101,6 +102,5 @@ $(document).ready(function() {
             });
         }
     });
-
 });
 
