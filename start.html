@@ -30,7 +30,7 @@
 
 
 <!----------   BODY SECTION   ---------->
-<body>
+<body ng-app="events">
     <header>
         <div class="container">
             <div>
@@ -81,10 +81,9 @@
 </row>
 
 <!----------   FOOTER SECTION   ---------->
-
-    <footer class="container-fluid kontener">
+    <footer class="container-fluid kontener" ng-controller="eventsCtrl">
         <div>
-            <h6>Krzykum Events &copy;</h6>
+            <h6>Krzykum Events &copy; {{hello}}</h6>
         </div>
     </footer>
 
@@ -96,6 +95,8 @@
         crossorigin="anonymous"></script>
     <script src="http://cookiealert.sruu.pl/CookieAlert-latest.min.js"></script>
 <script src="lib/jquery-ui.min.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="scripts/angularApp.js"></script>
 <script src="scripts/cookies.js"></script>
 <script src="scripts/apiConnector.js"></script>
 <script src="scripts/eventAsideBox.js"></script>
