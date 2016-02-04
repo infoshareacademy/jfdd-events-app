@@ -7,29 +7,29 @@ $(document).ready(function() {
 
 
     $('#calendar').fullCalendar({
+
         header: {
             left: 'prev,next today',
             center: 'title',
-            right: 'month,agendaWeek,agendaDay'
+            right: 'month,basicWeek,basicDay'
         },
+        //defaultView: 'basic',
 
         lang: 'pl',
         eventBackgroundColor:(255,0,0),
-        //aspectRatio:2,
-        contentHeight: 680,
-        //height: 620,
-        eventLimit: true, // for all non-agenda views
-        //views: {
+        height: 680,
         eventLimit: 3,
-        agenda: {
-                eventLimit: 6,// adjust to 6 only for agendaWeek/agendaDay
-            },
         eventLimitText: " ",
-
+        views: {
+            basic: {
+                eventLimit: 13
+            }
+        },
 
 
 
         eventRender: function(event, element) {
+            var end = moment(event.ownProps.end);
             $(element).attr('title', event.ownProps.url);
             $(element).on('click',(function () {
                 $(".collapse-1", ".collapse-2", ".collapse-3").empty();
@@ -38,6 +38,10 @@ $(document).ready(function() {
                 $(".collapsed-group-item-1").text(event.ownProps.eventName);
                 $('.collapse-1').html
                     ('<h4>' + "Miejsce wydarzenia" + '</h4>' + event.ownProps.position + '<br>' + '<br>'
+                    + '<h4>' + "Początek" + '</h4>' + event.start.format('YYYY-MM-DD') + ', godzina '
+                    + event.start.format('HH:mm') + '<br>' + '<br>'
+                    + '<h4>' + "Koniec" + '</h4>' + end.format('YYYY-MM-DD') + ', godzina '
+                    + end.format('HH:mm') + '<br>' + '<br>'
                     + '<h4>' + "Opis wydarzenia" + '</h4>' + event.ownProps.description + '\n' + '<br>' + '<br>' +
                     '<h4>' + "Witryna internetowa" + '</h4>' + '<a class="linkToWebsite" href="" target="_blank">' + event.ownProps.url + '</a>' + '<br>' + '<br>');
                 $(".linkToWebsite").attr("href", event.ownProps.url);
@@ -84,10 +88,11 @@ $(document).ready(function() {
                         events.push({
                             title: event.name,
                             start: event.startDate,
-                            end: event.endDate,
+                            //end: event.endDate,
                             ownProps: {
                                 description: event.descLong,
                                 eventName: event.name,
+                                end: event.endDate,
                                 url: event.urls.www,
                                 position: event.place.name,
                                 images: getAttachments(event)
