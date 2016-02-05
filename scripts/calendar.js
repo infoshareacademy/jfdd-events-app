@@ -30,7 +30,7 @@ $(document).ready(function() {
 
         eventRender: function(event, element) {
             var end = moment(event.ownProps.end);
-            $(element).attr('title', event.ownProps.url);
+            $(element).attr('title', event.ownProps.eventName);
             $(element).on('click',(function () {
                 $(".collapse-1", ".collapse-2", ".collapse-3").empty();
                 $(".asideBoxSection").fadeIn(1500);
