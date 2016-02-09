@@ -2,9 +2,8 @@
  * Created by klos on 22.01.2016.
  */
 var events;
+var counter = 0;
 $(document).ready(function() {
-
-
 
     $('#calendar').fullCalendar({
 
@@ -37,16 +36,30 @@ $(document).ready(function() {
                 $("#calendar").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-8");
                 $(".collapsed-group-item-1").text(event.ownProps.eventName);
                 $('.collapse-1').html
-                    ('<h4>' + "Miejsce wydarzenia" + '</h4>' + event.ownProps.position + '<br>' + '<br>'
+                    ('<img src=' + "" + event.ownProps.images + "" + '>' + '<h4>' + "Miejsce wydarzenia" + '</h4>' + event.ownProps.position + '<br>' + '<br>'
                     + '<h4>' + "Początek" + '</h4>' + event.start.format('YYYY-MM-DD') + ', godzina '
                     + event.start.format('HH:mm') + '<br>' + '<br>'
                     + '<h4>' + "Koniec" + '</h4>' + end.format('YYYY-MM-DD') + ', godzina '
                     + end.format('HH:mm') + '<br>' + '<br>'
                     + '<h4>' + "Opis wydarzenia" + '</h4>' + event.ownProps.description + '\n' + '<br>' + '<br>' +
-                    '<h4>' + "Witryna internetowa" + '</h4>' + '<a class="linkToWebsite" href="" target="_blank">' + event.ownProps.url + '</a>' + '<br>' + '<br>');
+                    '<h4>' + "Witryna internetowa" + '</h4>' + '<a class="linkToWebsite" href="" target="_blank">'
+                    + event.ownProps.url + '</a>' + '<br>' + '<br>');
                 $(".linkToWebsite").attr("href", event.ownProps.url);
                 $('.baton').css("display","inline-block");
             }));
+            $(element).on('click',function(){
+                counter++;
+                console.log(counter);
+
+                Storage.prototype.setObj = function(key, obj) {
+                    return this.setItem(key, JSON.stringify(obj))
+                }
+                Storage.prototype.getObj = function(key) {
+                    return JSON.parse(this.getItem(key))
+                }
+                localStorage.getObj('title');
+                localStorage.setObj('title', event.title);
+            });
         },
 
         //dayClick: function(date, jsEvent, view) {
@@ -82,7 +95,7 @@ $(document).ready(function() {
                             var arr = element.attachments.map(function (item) {
                                 return item.fileName;
                             });
-                            return arr;
+                            return arr[0];
                         }
 
                         events.push({
