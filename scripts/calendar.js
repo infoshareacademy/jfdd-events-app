@@ -2,7 +2,8 @@
  * Created by klos on 22.01.2016.
  */
 var events;
-var counter = 0;
+localStorage.setItem('title', []);
+
 $(document).ready(function() {
 
     $('#calendar').fullCalendar({
@@ -24,8 +25,6 @@ $(document).ready(function() {
                 eventLimit: 13
             }
         },
-
-
 
         eventRender: function(event, element) {
             var end = moment(event.ownProps.end);
@@ -49,17 +48,15 @@ $(document).ready(function() {
                 $('.baton').css("display","inline-block");
             }));
             $(element).on('click',function(){
-                counter++;
-                console.log(counter);
 
                 Storage.prototype.setObj = function(key, obj) {
                     return this.setItem(key, JSON.stringify(obj))
-                }
+                };
                 Storage.prototype.getObj = function(key) {
-                    return JSON.parse(this.getItem(key))
-                }
-                localStorage.getObj('title');
+                    return JSON.parse(this.getItem(key));
+                };
                 localStorage.setObj('title', event.title);
+                localStorage.getObj('title');
             });
         },
 
