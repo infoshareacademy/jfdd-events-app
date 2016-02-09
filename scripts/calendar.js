@@ -36,7 +36,8 @@ $(document).ready(function() {
                 $("#calendar").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-8");
                 $(".collapsed-group-item-1").text(event.ownProps.eventName);
                 $('.collapse-1').html
-                    ('<img src=' + "" + event.ownProps.images + "" + '>' + '<h4>' + "Miejsce wydarzenia" + '</h4>' + event.ownProps.position + '<br>' + '<br>'
+                    ('<img class="img-responsive" alt=" brak zdjęcia dla tego wydarzenia" src=' + event.ownProps.images + '>'
+                    + '<h4>' + "Miejsce wydarzenia" + '</h4>' + event.ownProps.position + '<br>' + '<br>'
                     + '<h4>' + "Początek" + '</h4>' + event.start.format('YYYY-MM-DD') + ', godzina '
                     + event.start.format('HH:mm') + '<br>' + '<br>'
                     + '<h4>' + "Koniec" + '</h4>' + end.format('YYYY-MM-DD') + ', godzina '
