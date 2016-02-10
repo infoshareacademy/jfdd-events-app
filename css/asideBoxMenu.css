@@ -2,7 +2,10 @@
     display: none;
     margin-top: 51px;
 }
-
+.placed {
+    float: right;
+    margin-top: -5px;
+}
 .asideBoxMenu {
     padding: 15px;
     display: inline-block;
