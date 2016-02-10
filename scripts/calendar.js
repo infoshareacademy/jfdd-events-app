@@ -34,8 +34,8 @@ $(document).ready(function() {
                 titleOfValue = event.ownProps.eventName;
                 $('.placed').on('click', function () {
                     var dataOfStorage = JSON.parse(localStorage.getItem('log'));
-                    dataOfStorage.forEach(function () {
-                        if (dataOfStorage[value] === titleOfValue && dataOfStorage[type] !== 'addToFav') {
+                    dataOfStorage.forEach(function (item) {
+                        if (dataOfStorage[item].value === titleOfValue && dataOfStorage[item].type !== 'addToFav') {
                             dataOfStorage.push({type: 'addToFav', value: titleOfValue});
                             localStorage.setItem('log',JSON.stringify(dataOfStorage));
                         }
