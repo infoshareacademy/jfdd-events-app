@@ -2,7 +2,6 @@
  * Created by klos on 22.01.2016.
  */
 var events;
-localStorage.setItem('title', []);
 
 $(document).ready(function() {
 
@@ -49,14 +48,9 @@ $(document).ready(function() {
             }));
             $(element).on('click',function(){
 
-                Storage.prototype.setObj = function(key, obj) {
-                    return this.setItem(key, JSON.stringify(obj))
-                };
-                Storage.prototype.getObj = function(key) {
-                    return JSON.parse(this.getItem(key));
-                };
-                localStorage.setObj('title', event.title);
-                localStorage.getObj('title');
+                logger.log( { type: 'show', value: event.title } );
+                logger.log( { type: 'addToFav', value: event.title } );
+                //localStorage.getObj('title');
             });
         },
 
@@ -75,7 +69,6 @@ $(document).ready(function() {
         //            $('.collapse-'+(index+1)).text(event.ownProps.description);
         //            $('button').css("display","inline-block");
         //        })
-        //
         //},
 
 
