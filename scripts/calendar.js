@@ -2,6 +2,7 @@
  * Created by klos on 22.01.2016.
  */
 var events;
+//var accumulator;
 
 $(document).ready(function() {
 
@@ -31,6 +32,16 @@ $(document).ready(function() {
             $(element).attr('title', event.ownProps.eventName);
             $(element).on('click',(function () {
                 titleOfValue = event.ownProps.eventName;
+                $('.placed').on('click', function () {
+                    var dataOfStorage = JSON.parse(localStorage.getItem('log'));
+                    dataOfStorage.forEach(function () {
+                        if (dataOfStorage[value] === titleOfValue && dataOfStorage[type] !== 'addToFav') {
+                            dataOfStorage.push({type: 'addToFav', value: titleOfValue});
+                            localStorage.setItem('log',JSON.stringify(dataOfStorage));
+                        }
+                    });
+                    //logger.log( { type: 'addToFav', value: titleOfValue } );
+                });
                 $(".collapse-1", ".collapse-2", ".collapse-3").empty();
                 $(".asideBoxSection").fadeIn(1500);
                 $("#calendar").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-8");
@@ -51,10 +62,6 @@ $(document).ready(function() {
 
             $(element).on('click',function(){
                 logger.log( { type: 'show', value: event.title } );
-            });
-
-            $('.placed').on('click', function () {
-                logger.log( { type: 'addToFav', value: event.title } );
             });
         },
 
