@@ -26,9 +26,11 @@ $(document).ready(function() {
         },
 
         eventRender: function(event, element) {
+            var titleOfValue;
             var end = moment(event.ownProps.end);
             $(element).attr('title', event.ownProps.eventName);
             $(element).on('click',(function () {
+                titleOfValue = event.ownProps.eventName;
                 $(".collapse-1", ".collapse-2", ".collapse-3").empty();
                 $(".asideBoxSection").fadeIn(1500);
                 $("#calendar").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-8");
