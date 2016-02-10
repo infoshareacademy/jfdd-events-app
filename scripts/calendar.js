@@ -46,11 +46,13 @@ $(document).ready(function() {
                 $(".linkToWebsite").attr("href", event.ownProps.url);
                 $('.baton').css("display","inline-block");
             }));
-            $(element).on('click',function(){
 
+            $(element).on('click',function(){
                 logger.log( { type: 'show', value: event.title } );
+            });
+
+            $('.placed').on('click', function () {
                 logger.log( { type: 'addToFav', value: event.title } );
-                //localStorage.getObj('title');
             });
         },
 
