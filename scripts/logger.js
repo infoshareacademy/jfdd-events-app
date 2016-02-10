@@ -4,21 +4,13 @@
 /**
  * Created by michal on 04.02.16.
  */
-var logger = (function(){
-    var events = [];
-    function getStorage() {
-        events = events.concat(JSON.parse(localStorage.getItem('logger')));
-    }
-
-    function addToLocalStorage(item){
-        localStorage.setItem('logger', JSON.stringify(item));
-    }
-
+var logger = (function() {
+    var key = 'log';
     return {
         log: function (event) {
-            getStorage();
+            var events = JSON.parse(localStorage.getItem(key)) || [];
             events.push(event);
-            addToLocalStorage(events);
+            localStorage.setItem(key, JSON.stringify(events));
         }
     }
 })();
