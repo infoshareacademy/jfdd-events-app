@@ -19,6 +19,7 @@
     <link href="css/menu.css" type="text/css" rel="stylesheet">
     <link href="css/asideBoxMenu.css" type="text/css" rel="stylesheet">
     <link href="css/stylesheet.css" type="text/css" rel="stylesheet">
+    <link href="css/calendar.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="lib/jquery-ui.min.css">
@@ -36,6 +37,7 @@
             <div>
                 <h3>Event Calendar <span>powered by Krzykum events</span></h3>
             </div>
+
             <!--<div class="logout">-->
                 <!--<p>LOGOUT</p>-->
             <!--</div>-->
@@ -52,8 +54,11 @@
             </div>
         </div>
     </header>
-
+    <div id="filters"></div>       <!-- filter buttons will be put here -->
+    <br>
+    <br>
 <row>
+
     <!----------   CALENDAR PLUGIN SECTION   ---------->
     <div id='calendar' class="calendarPlugin col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
 
@@ -98,7 +103,7 @@
 <script src="lib/angular.min.js"></script>
 <script src="scripts/angularApp.js"></script>
 <script src="scripts/cookies.js"></script>
-<script src="scripts/apiConnector.js"></script>
+<!--<script src="scripts/apiConnector.js"></script>-->
 <script src="scripts/eventAsideBox.js"></script>
 <!------------calendar plugin------------>
 <link rel='stylesheet' href='fullcalendar/fullcalendar.css'/>
