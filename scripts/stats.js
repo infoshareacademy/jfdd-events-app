@@ -2,7 +2,7 @@
  * Created by michal on 11.02.16.
  */
 $('.js-update-stats').on('click', function () {
-    var dataOfLocalStorage = JSON.parse(localStorage.getItem('log'));
+    var dataOfLocalStorage = JSON.parse(localStorage.getItem('log')) || [{'value':'brak wybranych wydarzeń'}];
     var dataForDisplay = dataOfLocalStorage
         .sort(function (a, b) {
             return a.value > b.value ? 1 : -1;

@@ -99,7 +99,7 @@ $(document).ready(function() {
                             var arr = element.attachments.map(function (item) {
                                 return item.fileName;
                             });
-                            return arr[0];
+                                return arr[0];
                         }
 
                         events.push({
