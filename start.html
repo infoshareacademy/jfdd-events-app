@@ -53,7 +53,7 @@
         </div>
     </header>
 
-<row>
+<div class="row">
     <!----------   CALENDAR PLUGIN SECTION   ---------->
     <div id='calendar' class="calendarPlugin col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
 
@@ -81,9 +81,21 @@
             <button type="button" class="btn btn-primary baton">Ukryj szczegóły</button>
         </div>
     </div>
-</row>
+</div>
 
-<!----------   FOOTER SECTION   ---------->
+    <div class="panel panel-default">
+        <div class="panel-heading"></div>
+        <div class="panel-body">
+            <button class="js-update-stats btn btn-primary">Pokaż Ulubione</button>
+            <ul class="js-stats">
+
+            </ul>
+         </div>
+    </div>
+
+
+
+    <!----------   FOOTER SECTION   ---------->
     <footer class="container-fluid kontener" ng-controller="eventsCtrl">
         <div>
             <h6>Krzykum Events &copy; {{hello}}</h6>
