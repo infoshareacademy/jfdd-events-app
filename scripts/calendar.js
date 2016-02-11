@@ -31,6 +31,19 @@ $(document).ready(function() {
             $(element).attr('title', event.ownProps.eventName);
             $(element).on('click',(function () {
                 titleOfValue = event.ownProps.eventName;
+
+                $('.placed').off('click').on('click', function () {
+                    var dataOfStorage = JSON.parse(localStorage.getItem('log'));
+                    if(
+                        dataOfStorage.find(function (item) {
+                            return item.value === titleOfValue && item.type === 'addToFav';
+                        }) === undefined
+                    ) {
+                        dataOfStorage.push({type: 'addToFav', value: titleOfValue});
+                        localStorage.setItem('log', JSON.stringify(dataOfStorage));
+                    }
+                    //logger.log( { type: 'addToFav', value: titleOfValue } );
+                });
                 $(".collapse-1", ".collapse-2", ".collapse-3").empty();
                 $(".asideBoxSection").fadeIn(1500);
                 $("#calendar").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-8");
@@ -51,10 +64,6 @@ $(document).ready(function() {
 
             $(element).on('click',function(){
                 logger.log( { type: 'show', value: event.title } );
-            });
-
-            $('.placed').on('click', function () {
-                logger.log( { type: 'addToFav', value: event.title } );
             });
         },
 
