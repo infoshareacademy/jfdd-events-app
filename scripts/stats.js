@@ -15,10 +15,18 @@ $('.js-update-stats').on('click', function () {
                 }
                 return a;
             } else {
-                return a.concat([{
-                    eventName: b.value,
-                    occurrences: 1
-                }]);
+                if (b.value === 'brak wybranych wydarzeń') {
+                    return a.concat([{
+                        eventName: b.value,
+                        occurrences: 0
+                    }]);
+                }
+                else {
+                    return a.concat([{
+                        eventName: b.value,
+                        occurrences: 1
+                    }]);
+                }
             }
         }, [])
         .sort(function (a, b) {
@@ -30,6 +38,5 @@ $('.js-update-stats').on('click', function () {
         $('.js-stats').append(((item.kind === 'addToFav') ?  $('<li class="list-group-item" style="color: red">') :
             $('<li class="list-group-item">')).append($('<span class="badge">')
             .append(item.occurrences)).append(item.eventName));
-        console.log(item.kind);
     });
 });

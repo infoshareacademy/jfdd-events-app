@@ -42,7 +42,6 @@ $(document).ready(function() {
                         dataOfStorage.push({type: 'addToFav', value: titleOfValue});
                         localStorage.setItem('log', JSON.stringify(dataOfStorage));
                     }
-                    //logger.log( { type: 'addToFav', value: titleOfValue } );
                 });
                 $(".collapse-1", ".collapse-2", ".collapse-3").empty();
                 $(".asideBoxSection").fadeIn(1500);
