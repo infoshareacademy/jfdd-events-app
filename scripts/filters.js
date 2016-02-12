@@ -44,6 +44,8 @@ var filterHndl = function() {
         };
 
         $('#calendar').fullCalendar( 'refetchEvents' );     // refecth events with filter applied
+        $(".filter_category.active").removeClass('active');
+        $(this).addClass('active')
     })
 }
 
@@ -52,8 +54,8 @@ var createFilters = function(filters_list) {
     /* Dynamically creates buttons for filtering */
     var filters_html = ""
     filters_list.forEach(function(elem) {
-        filters_html += "<input type='button' class='filter_category' value='" + elem + "'>"
+        filters_html += "<input type='button' class='btn btn-default filter_category' value='" + elem + "'>"
     });
-    $("#filters").html(filters_html);
+    $("#filters").html(filters_html).find('.btn:first-of-type').addClass('active');
     filterHndl();
 };

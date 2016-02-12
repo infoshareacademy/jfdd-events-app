@@ -49,15 +49,19 @@ $(document).ready(function() {
                 $("#calendar").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-8");
                 $(".collapsed-group-item-1").text(event.ownProps.eventName);
                 $('.collapse-1').html
-                    ('<img class="img-responsive" alt=" brak zdjęcia dla tego wydarzenia" src=' + event.ownProps.images + '>'
+                    ('<img class="img-responsive" alt=" brak zdjęcia dla tego wydarzenia" src=' + event.ownProps.image + '>'
                     + '<h4>' + "Miejsce wydarzenia" + '</h4>' + event.ownProps.position + '<br>' + '<br>'
                     + '<h4>' + "Początek" + '</h4>' + event.start.format('YYYY-MM-DD') + ', godzina '
                     + event.start.format('HH:mm') + '<br>' + '<br>'
                     + '<h4>' + "Koniec" + '</h4>' + end.format('YYYY-MM-DD') + ', godzina '
                     + end.format('HH:mm') + '<br>' + '<br>'
-                    + '<h4>' + "Opis wydarzenia" + '</h4>' + event.ownProps.description + '\n' + '<br>' + '<br>' +
-                    '<h4>' + "Witryna internetowa" + '</h4>' + '<a class="linkToWebsite" href="" target="_blank">'
-                    + event.ownProps.url + '</a>' + '<br>' + '<br>');
+                    + '<h4>' + "Opis wydarzenia" + '</h4>' + event.ownProps.description + '\n' + '<br>' + '<br>'
+                    + (event.ownProps.url ?
+                        '<h4>Witryna internetowa</h4><a class="linkToWebsite" href="" target="_blank">' + event.ownProps.url + '</a><br>' : ''))
+                    .find('img').on('error', function() {
+                        //this.src = 'images/logo.png';
+                        $(this).remove();
+                    });
                 $(".linkToWebsite").attr("href", event.ownProps.url);
                 $('.baton').css("display","inline-block");
             }));
@@ -95,7 +99,7 @@ $(document).ready(function() {
                     events = [];
                     eventsFeed.forEach(function (event, index) {
 
-                        function getAttachments(element) {
+                        function getAttachment(element) {
                             var arr = element.attachments.map(function (item) {
                                 return item.fileName;
                             });
@@ -115,7 +119,7 @@ $(document).ready(function() {
                                     end: event.endDate,
                                     url: event.urls.www,
                                     position: event.place.name,
-                                    images: getAttachments(event),
+                                    image: getAttachment(event),
                                     categoryId: event.categoryId
                                 }
                             })

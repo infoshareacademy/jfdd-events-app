@@ -5,6 +5,10 @@ header {
     margin-bottom: 20px;
 }
 
+body{
+    padding-bottom: 50px;
+}
+
 
 .container div h3 {
     color: white;
@@ -75,4 +79,15 @@ footer {
     color: white;
     font-weight: 100;
     text-align: center;
+}
+a.fc-event {
+    cursor: pointer;
+}
+
+.container-fluid {
+    margin-bottom: 15px;
+}
+
+.container-fluid:last-of-type {
+    margin-bottom: 0;
 }

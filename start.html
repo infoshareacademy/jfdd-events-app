@@ -56,30 +56,26 @@
     </header>
     <div class="container-fluid">
         <div class="row">
-            <div id="filters">
+            <div id="filters" class="btn-group col-xs-12">
                 <!-- filter buttons will be put here -->
             </div>
         </div>
     </div>
 
         <!----------   CALENDAR PLUGIN SECTION   ---------->
-
-        <div id='calendar' class="calendarPlugin col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
-
-        <!----------   ASIDE BOX MENU ------------>
-
     <div class="container-fluid">
         <div class="row">
-        <div class="asideBoxSection col-xs-12 col-sm-12 col-md-12 col-lg-4">
+            <div id='calendar' class="calendarPlugin col-xs-12"></div>
+            <div class="asideBoxSection col-xs-12 col-sm-12 col-md-12 col-lg-4">
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
-                                <a class="collapsed-group-item-1" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                </a>
                                 <button  class="placed" title="dodaj do ulubionych">
                                     <img src="images/heart54.png" height="20px" width="20px"/>
                                 </button>
+                                <a class="collapsed-group-item-1" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                </a>
                             </h4>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in asideBoxPanel" role="tabpanel" aria-labelledby="headingOne">
@@ -100,14 +96,13 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="panel panel-default">
-                <div class="panel-heading statsHeading"></div>
-                <div class="panel-body">
-                    <button class="js-update-stats btn btn-primary">Pokaż Statystyki</button>
+            <div class="col-xs-12">
+                    <p>
+                        <button class="js-update-stats btn btn-primary" data-active="Ukryj Statystyski" data-inactive="Pokaż Statystyki">Pokaż Statystyki</button>
+                    </p>
                     <ul class="js-stats list-group">
 
                     </ul>
-                </div>
             </div>
         </div>
     </div>
