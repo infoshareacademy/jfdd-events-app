@@ -5,7 +5,7 @@
     var app = angular.module('events', []);
 
     app.controller('eventsCtrl', function ($scope) {
-        $scope.hello = 'jeeeee angular';
+        $scope.hello = 'iSA Team';
     });
 
 })();

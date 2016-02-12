@@ -27,9 +27,23 @@ $(document).ready(function() {
         },
 
         eventRender: function(event, element) {
+            var titleOfValue;
             var end = moment(event.ownProps.end);
             $(element).attr('title', event.ownProps.eventName);
             $(element).on('click',(function () {
+                titleOfValue = event.ownProps.eventName;
+
+                $('.placed').off('click').on('click', function () {
+                    var dataOfStorage = JSON.parse(localStorage.getItem('log'));
+                    if(
+                        dataOfStorage.find(function (item) {
+                            return item.value === titleOfValue && item.type === 'addToFav';
+                        }) === undefined
+                    ) {
+                        dataOfStorage.push({type: 'addToFav', value: titleOfValue});
+                        localStorage.setItem('log', JSON.stringify(dataOfStorage));
+                    }
+                });
                 $(".collapse-1", ".collapse-2", ".collapse-3").empty();
                 $(".asideBoxSection").fadeIn(1500);
                 $("#calendar").addClass("col-xs-12 col-sm-12 col-md-12 col-lg-8");
@@ -47,16 +61,9 @@ $(document).ready(function() {
                 $(".linkToWebsite").attr("href", event.ownProps.url);
                 $('.baton').css("display","inline-block");
             }));
-            $(element).on('click',function(){
 
-                Storage.prototype.setObj = function(key, obj) {
-                    return this.setItem(key, JSON.stringify(obj))
-                };
-                Storage.prototype.getObj = function(key) {
-                    return JSON.parse(this.getItem(key));
-                };
-                localStorage.setObj('title', event.title);
-                localStorage.getObj('title');
+            $(element).on('click',function(){
+                logger.log( { type: 'show', value: event.title } );
             });
         },
 
@@ -75,7 +82,6 @@ $(document).ready(function() {
         //            $('.collapse-'+(index+1)).text(event.ownProps.description);
         //            $('button').css("display","inline-block");
         //        })
-        //
         //},
 
 
@@ -93,7 +99,7 @@ $(document).ready(function() {
                             var arr = element.attachments.map(function (item) {
                                 return item.fileName;
                             });
-                            return arr[0];
+                                return arr[0];
                         }
 
                         if ($.inArray(event.categoryId, filterCategory) > -1 || filterCategory.length == 0) {
